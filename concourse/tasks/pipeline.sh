@@ -31,4 +31,9 @@ source "${ROOT_FOLDER}/${TOOLS_RESOURCE}"/concourse/tasks/generate-settings.sh
 
 export TERM=dumb
 
+function deployServices(){
+ cf bs github-webhook movie-fun-registry
+ cf bs github-webhook moviefun-rabbitmq
+}
+
 cd "${ROOT_FOLDER}" || exit
