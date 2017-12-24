@@ -17,7 +17,7 @@ COPY seed/init.groovy /usr/share/jenkins/ref/init.groovy
 COPY seed/jenkins_pipeline.groovy /usr/share/jenkins/jenkins_pipeline.groovy
 COPY seed/settings.xml /usr/share/jenkins/settings.xml
 COPY plugins.txt /usr/share/jenkins/plugins.txt
-COPY seed/k8s/* /usr/share/jenkins/cert/
+#COPY seed/k8s/* /usr/share/jenkins/cert/
 
 USER root
 
@@ -57,9 +57,9 @@ RUN apt-get -y install apt-transport-https && \
     apt-get -y install cf-cli
 
 # Install kubectl
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
-    chmod +x ./kubectl && \
-    mv ./kubectl /usr/local/bin/kubectl
+#RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
+#    chmod +x ./kubectl && \
+#    mv ./kubectl /usr/local/bin/kubectl
 
 # Making docker in docker possible
 USER root
