@@ -5,7 +5,7 @@ set -o errexit
 __DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 export ENVIRONMENT=TEST
-echo "dev/${PIPELINE_VERSION}^{commit}"
+echo " ################# TEST  dev/${PIPELINE_VERSION}^{commit}"
 
 # shellcheck source=/dev/null
 [[ -f "${__DIR}/pipeline.sh" ]] && source "${__DIR}/pipeline.sh" ||  \
